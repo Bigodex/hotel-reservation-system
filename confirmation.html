@@ -4,9 +4,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Confirmação de Reserva</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        .confirmation-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+        }
+
+        h1 {
+            color: #28a745;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2em;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .button-container {
+            text-align: center;
+        }
+
+        .button-container a {
+            text-decoration: none;
+            padding: 12px 25px;
+            background-color: #28a745;
+            color: #fff;
+            border-radius: 5px;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+
+        .button-container a:hover {
+            background-color: #218838;
+        }
+    </style>
 </head>
 <body>
-    <h1>Reserva Confirmada!</h1>
-    <p>Obrigado por fazer a reserva. Estamos ansiosos para a sua estadia.</p>
+    <div class="confirmation-container">
+        <h1>Reserva Confirmada!</h1>
+        <p>Obrigado por fazer a reserva. Estamos ansiosos para a sua estadia.</p>
+        <div class="button-container">
+            <a href="index.html">Voltar para a Página Inicial</a>
+        </div>
+    </div>
 </body>
 </html>
