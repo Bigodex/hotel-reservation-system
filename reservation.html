@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Reserva</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        fieldset {
+            border: none;
+            margin-bottom: 20px;
+        }
+        
+        legend {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"],
+        select,
+        textarea {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        
+        textarea {
+            resize: vertical;
+        }
+        
+        button {
+            width: 100%;
+            padding: 15px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        button:hover {
+            background-color: #218838;
+        }
+        
+        @media (max-width: 600px) {
+            form {
+                padding: 15px;
+            }
+            
+            input[type="text"],
+            input[type="email"],
+            input[type="tel"],
+            input[type="date"],
+            select,
+            textarea {
+                width: calc(100% - 20px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Formulário de Reserva</h1>
+    <form action="confirmation.html" method="POST">
+        <fieldset>
+            <legend>Informações Pessoais</legend>
+            <label for="nome">Nome completo:</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="telefone">Telefone:</label>
+            <input type="tel" id="telefone" name="telefone" required>
+
+            <label for="documento">Documento de Identidade:</label>
+            <input type="text" id="documento" name="documento" required>
+        </fieldset>
+
+        <fieldset>
+            <legend>Detalhes da Reserva</legend>
+            <label for="checkin">Data de check-in:</label>
+            <input type="date" id="checkin" name="checkin" required>
+
+            <label for="checkout">Data de check-out:</label>
+            <input type="date" id="checkout" name="checkout" required>
+
+            <label for="hospedes">Número de hóspedes:</label>
+            <select id="hospedes" name="hospedes">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4+</option>
+            </select>
+        </fieldset>
+
+        <fieldset>
+            <legend>Tipo de Quarto</legend>
+            <input type="radio" id="standard" name="quarto" value="standard">
+            <label for="standard">Standard</label><br>
+            
+            <input type="radio" id="deluxe" name="quarto" value="deluxe">
+            <label for="deluxe">Deluxe</label><br>
+
+            <input type="radio" id="suite" name="quarto" value="suite">
+            <label for="suite">Suíte</label><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Serviços Adicionais</legend>
+            <input type="checkbox" id="cafe" name="servicos" value="cafe">
+            <label for="cafe">Café da manhã</label><br>
+            
+            <input type="checkbox" id="estacionamento" name="servicos" value="estacionamento">
+            <label for="estacionamento">Estacionamento</label><br>
+
+            <input type="checkbox" id="wifi" name="servicos" value="wifi">
+            <label for="wifi">Wi-Fi Premium</label><br>
+
+            <input type="checkbox" id="spa" name="servicos" value="spa">
+            <label for="spa">Acesso ao spa</label><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Requisitos Especiais</legend>
+            <label for="comentarios">Comentários ou pedidos especiais:</label>
+            <textarea id="comentarios" name="comentarios" rows="4" cols="50"></textarea>
+        </fieldset>
+
+        <fieldset>
+            <legend>Método de Pagamento</legend>
+            <select id="pagamento" name="pagamento">
+                <option value="cartao">Cartão de Crédito</option>
+                <option value="transferencia">Transferência Bancária</option>
+                <option value="chegada">Pagamento na Chegada</option>
+            </select>
+        </fieldset>
+
+        <fieldset>
+            <legend>Termos e Condições</legend>
+            <input type="checkbox" id="termos" name="termos" required>
+            <label for="termos">Aceito os termos e condições</label>
+        </fieldset>
+
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>
