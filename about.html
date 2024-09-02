@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Reservation System</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #F5F5DC;
+            margin: 0;
+            padding: 0;
+            background: url('img/num1.jpg') no-repeat center center;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .navbar {
+            width: 100%;
+            background-color: rgb(102, 74, 33);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 20px;
+            margin: 0;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+            gap: 20px;
+        }
+
+        .logo {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .navbar a {
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px;
+            color: #040404;
+            background-color: #F5F5DC;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            padding: 25px 40px;
+            border-radius: 60px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .navbar a:hover {
+            color: #F5F5DC;
+            background-color: rgb(102, 74, 33);
+            padding: 25px 40px;
+            border-radius: 60px;
+        }
+
+        .menu-left {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-top: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 90);
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 90);
+        }
+
+        a {
+            font-size: 1.1rem;
+            text-decoration: none;
+            color: #000000;
+            background-color: rgba(245, 245, 220);
+            padding: 15px 20px;
+            border-radius: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 1);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .about-section {
+            background-color: rgba(102, 74, 33, 0.7);
+            padding: 40px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 1);
+            border-radius: 10px;
+            margin-top: 120px;
+            max-width: 800px;
+            text-align: justify;
+        }
+
+        .about-section h2 {
+            font-size: 2rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            text-align: center;
+        }
+
+        .about-section p {
+            font-size: 1.1rem;
+            margin-bottom: 0px;
+            line-height: 1.8;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            a {
+                font-size: 1rem;
+                padding: 10px 20px;
+            }
+
+            .cards {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Menu de navegação -->
+    <div class="navbar">
+        <div class="menu-left">
+            <img src="img/logo.jpeg" alt="Logo" class="logo">
+            <a href="index.html">Home</a>
+            <a href="image.html">Imagens</a>
+            <a href="experience.html">Experiências</a>
+            <a href="about.html">Sobre Nós</a>
+            <a href="#contato">Contato</a>
+        </div>
+    </div>
+
+    <!-- Seção Sobre Nós -->
+    <div id="sobre-nos" class="about-section">
+        <h2>Sobre Nós</h2>
+        <p>
+            No Chalé Solaris, acreditamos que cada hóspede merece uma experiência única e memorável. Localizado em uma área remota e cercada pela natureza, oferecemos uma fuga do ritmo acelerado da vida moderna. Nosso chalé combina conforto rústico com amenidades modernas, criando um ambiente perfeito para quem busca tranquilidade e renovação.
+        </p>
+        <p>
+            Somos uma equipe dedicada a proporcionar o melhor atendimento, com foco na sustentabilidade e no respeito ao meio ambiente. Nosso compromisso é garantir que cada visitante se sinta em casa, ao mesmo tempo em que explora as maravilhas naturais que nos cercam. Desde trilhas relaxantes até momentos de lazer ao redor da fogueira, o Chalé Solaris é o destino ideal para uma pausa revigorante.
+        </p>
+        <p>
+            Esperamos que sua estadia seja repleta de boas lembranças e que você saia daqui sentindo-se renovado, inspirado e conectado com a natureza.
+        </p>
+    </div>
+</body>
+</html>
