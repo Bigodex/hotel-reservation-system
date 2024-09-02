@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,51 +8,108 @@
         body {
             font-family: 'Roboto', sans-serif;
             line-height: 1.6;
-            color: #fff; /* Texto em branco para contraste com o fundo */
+            color: #F5F5DC; /* Texto em branco para contraste com o fundo */
             margin: 0;
             padding: 0;
-            background: url('https://images.pexels.com/photos/2294125/pexels-photo-2294125.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') no-repeat center center fixed;
+            background: url('img/num1.jpg') no-repeat center center;
             background-size: cover;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
             padding: 20px;
+        }
+
+        .navbar {
+            width: 100%;
+            background-color: rgb(102, 74, 33);; /* Cor de fundo do menu */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para destacar o menu */
+            display: flex;
+            justify-content: center; /* Distribui os itens entre o espaço */
+            align-items: center; /* Alinha os itens ao centro verticalmente */
+            padding: 20px 20px;
+            margin: 0; /* Remove a margem */
+            position: fixed; /* Fixa a barra no topo da página */
+            top: 0; /* Garante que fique no topo */
+            z-index: 1000; /* Garante que fique acima de outros elementos */
+            gap: 20px;
+        }
+
+        .logo {
+            width: 70px; /* Ajuste a largura conforme necessário */
+            height: 70px; /* Ajuste a altura conforme necessário */
+            border-radius: 50%; /* Torna a imagem redonda */
+            object-fit: cover; /* Garante que a imagem se ajuste ao contêiner */
+        }
+
+        .navbar a {
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px; /* Define o tamanho da fonte */
+            color: #040404; /* Cor do texto */
+            background-color: #F5F5DC;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6); /* Remove qualquer fundo */
+            margin: 0; /* Remove margens */
+            padding: 0; /* Remove espaçamento interno */
+            text-decoration: none; 
+            padding: 25px 40px;
+            border-radius: 60px;
+            justify-content: center; /* Distribui os itens entre o espaço */
+            align-items: center;
+        }
+
+
+        .navbar a:hover {
+            color: #F5F5DC; /* Cor do texto ao passar o mouse */
+            background-color: rgb(102, 74, 33); /* Fundo preto ao passar o mouse */
+            padding: 25px 40px;
+            border-radius: 60px; /* Sublinhado ao passar o mouse */
+        }
+
+        
+        .menu-left {
+            display: flex;
+            justify-content: center;
+            gap: 20px; /* Espaço entre os links */
         }
 
         .container {
             text-align: center;
-            background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente para melhorar a legibilidade */
-            padding: 20px;
-            border-radius: 8px;
+            background-color: rgba(102, 74, 33, 0.7); /* Fundo semi-transparente para melhorar a legibilidade */
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 1);
+            border-radius: 10px;
+            position: fixed; /* Fixa a barra no topo da página */
+            top: 200px;
         }
 
         h1 {
             font-size: 2.5rem;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra no texto para maior contraste */
+            margin-top: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 90); /* Sombra no texto para maior contraste */
         }
 
         p {
             font-size: 1.2rem;
-            margin-bottom: 30px;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+            margin-bottom: 40px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 90);
         }
 
         a {
             font-size: 1.1rem;
             text-decoration: none;
-            color: #fff;
-            background-color: #28a745;
-            padding: 12px 24px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            color: #000000;
+            background-color: rgba(245, 245, 220);
+            padding: 15px 20px;
+            border-radius: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 1);
             transition: background-color 0.3s ease, box-shadow 0.3s ease;
         }
 
         a:hover {
+            color: #F5F5DC;
             background-color: #218838;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
         }
 
         @media (max-width: 768px) {
@@ -68,13 +125,34 @@
                 font-size: 1rem;
                 padding: 10px 20px;
             }
+
+            .cards {
+                flex-direction: column;
+                align-items: center;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Menu de navegação -->
+    <div class="navbar">
+        <div class="menu-left">
+            <img src="img/logo.jpeg" alt="Logo" class="logo">
+            <a href="index.html">Home</a>
+            <a href="image.html">Imagens</a>
+            <a href="experience.html">Experiências</a>
+            <a href="#sobre-nos">Sobre Nós</a>
+            <a href="#contato">Contato</a>
+        </div>
+    </div>
+
+    <br>
+
     <div class="container">
-        <h1>Bem-vindo ao Nosso Hotel</h1>
-        <p>Desfrute do conforto e da hospitalidade<br> do nosso hotel de classe mundial.</p>
+        <h1>Bem-vindo ao Chalé Solaris</h1>
+        <p>O Chalé Solaris é um refúgio acolhedor no coração da natureza,<br> 
+            cercado por árvores e tranquilidade. Com seu charme rústico e vistas<br> 
+            incríveis, é o local ideal para relaxar e se reconectar com o mundo natural.</p>
         <a href="reservation.html">Faça sua Reserva</a>
     </div>
 </body>

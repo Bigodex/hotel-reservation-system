@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Reservation System</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #F5F5DC; /* Texto em branco para contraste com o fundo */
+            margin: 0;
+            padding: 0;
+            background: #000000;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .navbar {
+            width: 100%;
+            background-color: rgb(102, 74, 33); /* Cor de fundo do menu */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para destacar o menu */
+            display: flex;
+            justify-content: center; /* Distribui os itens no centro */
+            align-items: center; /* Alinha os itens verticalmente */
+            padding: 20px;
+            position: fixed; /* Fixa a barra no topo da página */
+            top: 0; /* Garante que fique no topo */
+            z-index: 1000; /* Garante que fique acima de outros elementos */
+            gap: 20px;
+        }
+
+        .logo {
+            width: 70px; /* Ajuste a largura conforme necessário */
+            height: 70px; /* Ajuste a altura conforme necessário */
+            border-radius: 50%; /* Torna a imagem redonda */
+            object-fit: cover; /* Garante que a imagem se ajuste ao contêiner */
+        }
+
+        .navbar a {
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px; /* Define o tamanho da fonte */
+            color: #040404; /* Cor do texto */
+            background-color: #F5F5DC;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
+            text-decoration: none; 
+            padding: 25px 40px;
+            border-radius: 60px;
+            text-align: center;
+        }
+
+        .navbar a:hover {
+            color: #F5F5DC; /* Cor do texto ao passar o mouse */
+            background-color: rgb(102, 74, 33); /* Fundo ao passar o mouse */
+        }
+
+        .menu-left {
+            display: flex;
+            justify-content: center;
+            gap: 20px; /* Espaço entre os links */
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 fotos por linha */
+            gap: 15px;
+            padding: 20px;
+            margin-top: 150px; /* Para dar espaço ao menu fixo */
+        }
+
+        .image-item {
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            height: 300px; /* Ajusta todas as imagens para o mesmo tamanho */
+        }
+
+        .image-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Garante que a imagem se ajuste ao contêiner */
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .image-item img:hover {
+            transform: scale(1.1);
+        }
+
+        /* Estilo para a imagem em tela cheia */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+        }
+
+        .modal:target {
+            display: flex;
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 30px;
+            font-weight: bold;
+            text-decoration: none;
+            z-index: 1001;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .image-grid {
+                grid-template-columns: repeat(2, 1fr); /* 2 fotos por linha em telas menores */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .image-grid {
+                grid-template-columns: 1fr; /* 1 foto por linha em telas muito pequenas */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="menu-left">
+            <img src="img/logo.jpeg" alt="Logo" class="logo">
+            <a href="index.html">Home</a>
+            <a href="image.html">Imagens</a>
+            <a href="experience.html">Experiências</a>
+            <a href="#sobre-nos">Sobre Nós</a>
+            <a href="#contato">Contato</a>
+        </div>
+    </div>
+
+    <div class="image-grid">
+        <div class="image-item">
+            <a href="#img1"><img src="img/num1.jpg" alt="Imagem do Hotel 1"></a>
+        </div>
+        <div class="image-item">
+            <a href="#img2"><img src="img/num2.jpg" alt="Imagem do Hotel 2"></a>
+        </div>
+        <div class="image-item">
+            <a href="#img3"><img src="img/num3.jpg" alt="Imagem do Hotel 3"></a>
+        </div>
+        <div class="image-item">
+            <a href="#img4"><img src="img/num4.jpg" alt="Imagem do Hotel 4"></a>
+        </div>
+        <div class="image-item">
+            <a href="#img5"><img src="img/num5.jpg" alt="Imagem do Hotel 5"></a>
+        </div>
+        <div class="image-item">
+            <a href="#img6"><img src="img/num6.jpg" alt="Imagem do Hotel 6"></a>
+        </div>
+        <div class="image-item">
+            <a href="#img7"><img src="img/num7.jpg" alt="Imagem do Hotel 7"></a>
+        </div>
+        <div class="image-item">
+            <a href="#img8"><img src="img/num8.jpg" alt="Imagem do Hotel 8"></a>
+        </div>
+        <div class="image-item">
+            <a href="#img9"><img src="img/num9.jpg" alt="Imagem do Hotel 9"></a>
+        </div>
+        <div class="image-item">
+            <a href="#img10"><img src="img/background.jpg" alt="Imagem do Hotel 10"></a>
+        </div>
+        <div class="image-item">
+            <a href="#img11"><img src="img/num10.jpg" alt="Imagem do Hotel 10"></a>
+        </div>
+        <div class="image-item">
+            <a href="#img12"><img src="img/num11.jpg" alt="Imagem do Hotel 10"></a>
+        </div>
+        <div class="image-item">
+            <a href="#img13"><img src="img/num12.jpg" alt="Imagem do Hotel 10"></a>
+        </div>
+        <div class="image-item">
+            <a href="#img14"><img src="img/num13.jpg" alt="Imagem do Hotel 10"></a>
+        </div>
+        <div class="image-item">
+            <a href="#img15"><img src="img/num14.jpg" alt="Imagem do Hotel 10"></a>
+        </div>
+        <div class="image-item">
+            <a href="#img16"><img src="img/num15.jpg" alt="Imagem do Hotel 10"></a>
+        </div>
+        <div class="image-item">
+            <a href="#img17"><img src="img/num16.jpg" alt="Imagem do Hotel 10"></a>
+        </div>
+        <div class="image-item">
+            <a href="#img18"><img src="img/num17.jpg" alt="Imagem do Hotel 10"></a>
+        </div>
+        <div class="image-item">
+            <a href="#img19"><img src="img/num18.jpg" alt="Imagem do Hotel 10"></a>
+        </div>
+        <div class="image-item">
+            <a href="#img20"><img src="img/num19.jpg" alt="Imagem do Hotel 10"></a>
+        </div>
+        <div class="image-item">
+            <a href="#img21"><img src="img/num20.jpg" alt="Imagem do Hotel 10"></a>
+        </div>
+    </div>
+
+    <!-- Modal para cada imagem -->
+    <div id="img1" class="modal">
+        <a href="#" class="close">&times;</a>
+        <img src="img/num1.jpg" alt="Imagem do Hotel 1">
+    </div>
+
+    <div id="img2" class="modal">
+        <a href="#" class="close">&times;</a>
+        <img src="img/num2.jpg" alt="Imagem do Hotel 2">
+    </div>
+
+    <div id="img3" class="modal">
+        <a href="#" class="close">&times;</a>
+        <img src="img/num3.jpg" alt="Imagem do Hotel 3">
+    </div>
+
+    <div id="img4" class="modal">
+        <a href="#" class="close">&times;</a>
+        <img src="img/num4.jpg" alt="Imagem do Hotel 4">
+    </div>
+
+    <div id="img5" class="modal">
+        <a href="#" class="close">&times;</a>
+        <img src="img/num5.jpg" alt="Imagem do Hotel 5">
+    </div>
+
+    <div id="img6" class="modal">
+        <a href="#" class="close">&times;</a>
+        <img src="img/num6.jpg" alt="Imagem do Hotel 6">
+    </div>
+
+    <div id="img7" class="modal">
+        <a href="#" class="close">&times;</a>
+        <img src="img/num7.jpg" alt="Imagem do Hotel 7">
+    </div>
+
+    <div id="img8" class="modal">
+        <a href="#" class="close">&times;</a>
+        <img src="img/num8.jpg" alt="Imagem do Hotel 8">
+    </div>
+
+    <div id="img9" class="modal">
+        <a href="#" class="close">&times;</a>
+        <img src="img/num9.jpg" alt="Imagem do Hotel 9">
+    </div>
+
+    <div id="img10" class="modal">
+        <a href="#" class="close">&times;</a>
+        <img src="img/background.jpg" alt="Imagem do Hotel 10">
+    </div>
+
+    <div id="img11" class="modal">
+        <a href="#" class="close">&times;</a>
+        <img src="img/num10.jpg" alt="Imagem do Hotel 9">
+    </div>
+
+    <div id="img12" class="modal">
+        <a href="#" class="close">&times;</a>
+        <img src="img/num11.jpg" alt="Imagem do Hotel 9">
+    </div>
+
+    <div id="img13" class="modal">
+        <a href="#" class="close">&times;</a>
+        <img src="img/num12.jpg" alt="Imagem do Hotel 9">
+    </div>
+
+    <div id="img14" class="modal">
+        <a href="#" class="close">&times;</a>
+        <img src="img/num13.jpg" alt="Imagem do Hotel 9">
+    </div>
+
+    <div id="img15" class="modal">
+        <a href="#" class="close">&times;</a>
+        <img src="img/num14.jpg" alt="Imagem do Hotel 9">
+    </div>
+
+    <div id="img16" class="modal">
+        <a href="#" class="close">&times;</a>
+        <img src="img/num15.jpg" alt="Imagem do Hotel 9">
+    </div>
+
+    <div id="img17" class="modal">
+        <a href="#" class="close">&times;</a>
+        <img src="img/num16.jpg" alt="Imagem do Hotel 9">
+    </div>
+
+    <div id="img18" class="modal">
+        <a href="#" class="close">&times;</a>
+        <img src="img/num17.jpg" alt="Imagem do Hotel 9">
+    </div>
+
+    <div id="img19" class="modal">
+        <a href="#" class="close">&times;</a>
+        <img src="img/num18.jpg" alt="Imagem do Hotel 9">
+    </div>
+
+    <div id="img20" class="modal">
+        <a href="#" class="close">&times;</a>
+        <img src="img/num19.jpg" alt="Imagem do Hotel 9">
+    </div>
+
+    <div id="img21" class="modal">
+        <a href="#" class="close">&times;</a>
+        <img src="img/num20.jpg" alt="Imagem do Hotel 9">
+    </div>
+</body>
+</html>
