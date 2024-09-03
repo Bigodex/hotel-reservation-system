@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - Chalé Solaris</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #F5F5DC;
+            margin: 0;
+            padding: 0;
+            background: url('img/num18.jpg') no-repeat center center;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .navbar {
+            width: 100%;
+            background-color: rgb(102, 74, 33);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 20px;
+            margin: 0;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+            gap: 20px;
+        }
+
+        .logo {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .navbar a {
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px;
+            color: #040404;
+            background-color: #F5F5DC;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
+            margin: 0;
+            text-decoration: none; 
+            padding: 25px 40px;
+            border-radius: 60px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .navbar a:hover {
+            color: #F5F5DC;
+            background-color: rgba(102, 74, 33);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+        }
+
+        .menu-left {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .container {
+            text-align: center;
+            background-color: rgba(102, 74, 33);
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 1);
+            border-radius: 10px;
+            position: fixed;
+            top: 150px;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-top: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 90);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 5px; /* Diminuído de 10px para 5px */
+            margin-top: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 90);
+        }
+
+        label {
+            text-align: left;
+            font-size: 1.1rem;
+            margin-bottom: 2px; /* Diminuído para ajustar o espaço */
+        }
+
+        input, textarea {
+            padding: 8px;
+            border: none; /* Diminuído de 10px para 8px */
+            border-radius: 30px;
+            font-size: 1rem;
+            background-color: #F5F5DC;
+        }
+
+        input[type="submit"] {
+            background-color: #F5F5DC;
+            color: #000000;
+            cursor: pointer;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            padding: 15px 15px;
+            border-radius: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 1);
+            font-size: 1.0rem;
+            margin-top: 30px;
+        }
+
+        input[type="submit"]:hover {
+            color: #F5F5DC; /* Cor do texto no hover */
+            background-color: #218838; /* Cor de fundo no hover */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            form {
+                gap: 10px;
+            }
+
+            label, input, textarea, input[type="submit"] {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Menu de navegação -->
+    <div class="navbar">
+        <div class="menu-left">
+            <img src="img/logo.jpeg" alt="Logo" class="logo">
+            <a href="index.html">Home</a>
+            <a href="image.html">Imagens</a>
+            <a href="experience.html">Experiências</a>
+            <a href="about.html">Sobre Nós</a>
+            <a href="contact.html">Contato</a>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="container">
+        <h1>Contato</h1>
+        <form action="process_contact.php" method="POST">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+</body>
+</html>

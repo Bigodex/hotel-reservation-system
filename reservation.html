@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulário de Reserva</title>
+    <title>Reserva - Chalé Solaris</title>
     <style>
         body {
             font-family: 'Roboto', sans-serif;
@@ -23,7 +23,7 @@
 
         .navbar {
             width: 100%;
-            background-color: rgb(102, 74, 33);; /* Cor de fundo do menu */
+            background-color: rgb(102, 74, 33); /* Cor de fundo do menu */
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para destacar o menu */
             display: flex;
             justify-content: center; /* Distribui os itens entre o espaço */
@@ -48,7 +48,7 @@
             font-size: 14px; /* Define o tamanho da fonte */
             color: #040404; /* Cor do texto */
             background-color: #F5F5DC;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6); /* Remove qualquer fundo */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6); /* Sombra */
             margin: 0; /* Remove margens */
             padding: 0; /* Remove espaçamento interno */
             text-decoration: none; 
@@ -58,103 +58,120 @@
             align-items: center;
         }
 
-
         .navbar a:hover {
             color: #F5F5DC; /* Cor do texto ao passar o mouse */
-            background-color: rgb(102, 74, 33); /* Fundo preto ao passar o mouse */
+            background-color: rgb(102, 74, 33); /* Fundo ao passar o mouse */
             padding: 25px 40px;
-            border-radius: 60px; /* Sublinhado ao passar o mouse */
+            border-radius: 60px;
         }
 
-        
         .menu-left {
             display: flex;
             justify-content: center;
             gap: 20px; /* Espaço entre os links */
         }
-        
+
         h1 {
             text-align: center;
-            color: #333;
+            color: #F5F5DC;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 90); /* Sombra no texto */
+            margin-top: 100px;
         }
-        
+
         form {
             max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
+            width: 100%;
+            background-color: rgba(102, 74, 33); /* Fundo semi-transparente */
+            padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 1);
+            color: #F5F5DC;
         }
-        
+
         fieldset {
             border: none;
             margin-bottom: 20px;
         }
-        
+
         legend {
             font-weight: bold;
-            color: #333;
+            color: #F5F5DC;
             margin-bottom: 10px;
         }
-        
+
         label {
             display: block;
             margin-bottom: 5px;
-            color: #555;
+            color: #F5F5DC;
         }
-        
+
         input[type="text"],
         input[type="email"],
         input[type="tel"],
         input[type="date"],
         select,
         textarea {
-            width: calc(100% - 22px);
+            width: 100%;
             padding: 10px;
             margin-bottom: 15px;
             border: 1px solid #ccc;
-            border-radius: 5px;
+            border-radius: 30px;
             font-size: 16px;
+            background-color: #F5F5DC;
+            color: #333;
+            align-items: flex-start;
         }
-        
-        input[type="radio"],
-        input[type="checkbox"] {
-            margin-right: 10px;
-        }
-        
+
         textarea {
-            resize: vertical;
+            resize: horizontal;
         }
-        
+
         button {
             width: 100%;
             padding: 15px;
-            background-color: #28a745;
-            color: #fff;
+            background-color: #218838;
+            color: #F5F5DC;
             border: none;
-            border-radius: 5px;
+            border-radius: 30px;
             font-size: 16px;
             cursor: pointer;
             transition: background-color 0.3s ease;
         }
-        
+
         button:hover {
-            background-color: #218838;
+            background-color: #1e7e34;
         }
-        
+
+        .radio-group, .checkbox-group {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .radio-group label, .checkbox-group label {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
         @media (max-width: 600px) {
             form {
                 padding: 15px;
             }
-            
+
             input[type="text"],
             input[type="email"],
             input[type="tel"],
             input[type="date"],
             select,
             textarea {
-                width: calc(100% - 20px);
+                width: 100%;
+            }
+
+            .radio-group, .checkbox-group {
+                flex-direction: column;
+                align-items: flex-start;
             }
         }
     </style>
@@ -167,10 +184,9 @@
             <a href="image.html">Imagens</a>
             <a href="experience.html">Experiências</a>
             <a href="about.html">Sobre Nós</a>
-            <a href="#contato">Contato</a>
+            <a href="contact.html">Contato</a>
         </div>
     </div>
-    <br>
     <h1>Formulário de Reserva</h1>
     <form action="confirmation.html" method="GET">
         <fieldset>
@@ -187,7 +203,8 @@
             <label for="documento">CPF:</label>
             <input type="text" id="documento" name="documento">
         </fieldset>
-
+        <hr>
+        <br>
         <fieldset>
             <legend>Detalhes da Reserva</legend>
             <label for="checkin">Data de check-in:</label>
@@ -204,56 +221,74 @@
                 <option value="4">4+</option>
             </select>
         </fieldset>
-
+        <hr>
+        <br>
         <fieldset>
             <legend>Tipo de Quarto</legend>
-            <input type="radio" id="standard" name="quarto" value="standard">
-            <label for="standard">Standard</label><br>
-            
-            <input type="radio" id="deluxe" name="quarto" value="deluxe">
-            <label for="deluxe">Deluxe</label><br>
+            <div class="radio-group">
+                <label for="standard">
+                    <input type="radio" id="standard" name="quarto" value="standard">
+                    Standard
+                </label>
+                
+                <label for="deluxe">
+                    <input type="radio" id="deluxe" name="quarto" value="deluxe">
+                    Deluxe
+                </label>
 
-            <input type="radio" id="suite" name="quarto" value="suite">
-            <label for="suite">Suíte</label><br>
+                <label for="suite">
+                    <input type="radio" id="suite" name="quarto" value="suite">
+                    Suíte
+                </label>
+            </div>
         </fieldset>
-
+        <hr>
+        <br>
         <fieldset>
             <legend>Serviços Adicionais</legend>
-            <input type="checkbox" id="cafe" name="servicos" value="cafe">
-            <label for="cafe">Café da manhã</label><br>
-            
-            <input type="checkbox" id="estacionamento" name="servicos" value="estacionamento">
-            <label for="estacionamento">Estacionamento</label><br>
+            <div class="checkbox-group">
+                <label for="cafe">
+                    <input type="checkbox" id="cafe" name="servicos" value="cafe">
+                    Café da manhã
+                </label>
+                
+                <label for="estacionamento">
+                    <input type="checkbox" id="estacionamento" name="servicos" value="estacionamento">
+                    Estacionamento
+                </label>
 
-            <input type="checkbox" id="wifi" name="servicos" value="wifi">
-            <label for="wifi">Wi-Fi Premium</label><br>
+                <label for="wifi">
+                    <input type="checkbox" id="wifi" name="servicos" value="wifi">
+                    Wi-Fi Premium
+                </label>
 
-            <input type="checkbox" id="spa" name="servicos" value="spa">
-            <label for="spa">Acesso ao spa</label><br>
+                <label for="spa">
+                    <input type="checkbox" id="spa" name="servicos" value="spa">
+                    Acesso ao spa
+                </label>
+            </div>
         </fieldset>
-
+        <hr>
+        <br>
         <fieldset>
             <legend>Requisitos Especiais</legend>
             <label for="comentarios">Comentários ou pedidos especiais:</label>
             <textarea id="comentarios" name="comentarios" rows="4" cols="50"></textarea>
         </fieldset>
-
+        <hr>
+        <br>
         <fieldset>
             <legend>Método de Pagamento</legend>
+            <label for="pagamento">Selecione o método de pagamento:</label>
             <select id="pagamento" name="pagamento">
-                <option value="cartao">Cartão de Crédito</option>
+                <option value="pix">Pix</option>
+                <option value="debito">Cartão de Débito</option>
+                <option value="credito">Cartão de Crédito</option>
                 <option value="transferencia">Transferência Bancária</option>
-                <option value="chegada">Pagamento na Chegada</option>
             </select>
         </fieldset>
 
-        <fieldset>
-            <legend>Termos e Condições</legend>
-            <input type="checkbox" id="termos" name="termos" required>
-            <label for="termos">Aceito os termos e condições</label>
-        </fieldset>
-
-        <button type="submit">Enviar</button>
+        <button type="submit">Confirmar Reserva</button>
     </form>
 </body>
 </html>
