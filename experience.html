@@ -1,156 +1,147 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="no-js">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Experiências — Chalé Solaris</title>
-    <meta name="description" content="Aconchego, hidromassagem com vista, fogueira e trilhas: conheça as experiências do Chalé Solaris.">
-    <meta name="theme-color" content="#24443A">
-    <link rel="icon" href="img/logo.jpeg">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/main.js" defer></script>
+    <title>Experiências - Chalé Solaris</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #F5F5DC; /* Texto em branco para contraste com o fundo */
+            margin: 0;
+            padding: 0;
+            background: url('img/num2.jpg') no-repeat center center;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .navbar {
+            width: 100%;
+            background-color: rgb(102, 74, 33); /* Cor de fundo do menu */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para destacar o menu */
+            display: flex;
+            justify-content: center; /* Distribui os itens no centro */
+            align-items: center; /* Alinha os itens verticalmente */
+            padding: 20px;
+            position: fixed; /* Fixa a barra no topo da página */
+            top: 0; /* Garante que fique no topo */
+            z-index: 1000; /* Garante que fique acima de outros elementos */
+            gap: 20px;
+        }
+
+        .logo {
+            width: 70px; /* Ajuste a largura conforme necessário */
+            height: 70px; /* Ajuste a altura conforme necessário */
+            border-radius: 50%; /* Torna a imagem redonda */
+            object-fit: cover; /* Garante que a imagem se ajuste ao contêiner */
+        }
+
+        .navbar a {
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px; /* Define o tamanho da fonte */
+            color: #040404; /* Cor do texto */
+            background-color: #F5F5DC;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
+            text-decoration: none; 
+            padding: 25px 40px;
+            border-radius: 60px;
+            text-align: center;
+        }
+
+        .navbar a:hover {
+            color: #F5F5DC; /* Cor do texto ao passar o mouse */
+            background-color: rgb(102, 74, 33); /* Fundo ao passar o mouse */
+        }
+
+        .menu-left {
+            display: flex;
+            justify-content: center;
+            gap: 20px; /* Espaço entre os links */
+        }
+
+        .experiencias {
+            background-color: rgb(102, 74, 33, 0.7); /* Mesmo fundo do body */
+            color: #F5F5DC; /* Mesma cor de texto do body */
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
+        }
+
+        .experiencias h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: #F5F5DC; /* Cor do título */
+        }
+
+        .experiencia-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px; /* Espaço entre as experiências */
+            flex-wrap: wrap; /* Para garantir que se ajuste bem em telas menores */
+        }
+
+        .experiencia {
+            background-color: rgb(102, 74, 33); /* Mesmo fundo da navbar */
+            color: #F5F5DC; /* Cor do texto */
+            padding: 30px 50px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra para destacar as experiências */
+            width: 300px; /* Largura fixa para os cartões de experiência */
+            text-align: left;
+        }
+
+        .experiencia h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .experiencia p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+    </style>
 </head>
 <body>
-    <a class="skip-link" href="#main">Pular para o conteúdo</a>
-
-    <header class="site-header">
-        <div class="container header-inner">
-            <a href="index.html" class="brand" aria-label="Chalé Solaris — início">
-                <img src="img/logo.jpeg" alt="" width="44" height="44">
-                <span>Chalé Solaris</span>
-            </a>
-            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menu">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-            </button>
-            <nav id="site-nav" class="nav" aria-label="Navegação principal">
-                <ul class="nav-list">
-                    <li><a href="index.html">Início</a></li>
-                    <li><a href="image.html">Galeria</a></li>
-                    <li><a href="experience.html" aria-current="page">Experiências</a></li>
-                    <li><a href="about.html">Sobre nós</a></li>
-                    <li><a href="contact.html">Contato</a></li>
-                </ul>
-                <a href="reservation.html" class="btn btn--primary">Reservar</a>
-            </nav>
+    <div class="navbar">
+        <div class="menu-left">
+            <img src="img/logo.jpeg" alt="Logo" class="logo">
+            <a href="index.html">Home</a>
+            <a href="image.html">Imagens</a>
+            <a href="experience.html">Experiências</a>
+            <a href="about.html">Sobre Nós</a>
+            <a href="contact.html">Contato</a>
         </div>
-    </header>
+    </div>
 
-    <main id="main">
-        <section class="page-hero">
-            <div class="hero-media"><img src="img/num20.jpg" alt="Fogueira com cadeiras e varal de luzes ao entardecer" fetchpriority="high"></div>
-            <div class="container">
-                <span class="eyebrow">Experiências</span>
-                <h1>Experiências incríveis no Chalé Solaris</h1>
-                <p>Descanso, contemplação e aventura — no seu ritmo.</p>
+    <!-- Seção de Experiências -->
+    <section id="experiencias" class="experiencias">
+        <h2>Experiências Incríveis no Nosso Hotel</h2>
+        <div class="experiencia-container">
+            <div class="experiencia">
+                <h3>Aconchego</h3>
+                <p>Ambiente de madeira e luz natural suave.  
+                    Decoração rústica com toque de sofisticação acolhedora.
+                    Espaço perfeito para relaxar em total conforto.
             </div>
-        </section>
-
-        <section class="section">
-            <div class="container feature-rows">
-                <div class="split">
-                    <div class="split-media split-media--wide reveal">
-                        <img src="img/num13.jpg" alt="Sala de estar em madeira com escada para o mezanino" loading="lazy" decoding="async">
-                    </div>
-                    <div class="reveal">
-                        <span class="feature-index">01</span>
-                        <h2>Aconchego</h2>
-                        <p class="lead">Ambiente de madeira e luz natural suave.</p>
-                        <p>Decoração rústica com toque de sofisticação acolhedora. Um espaço perfeito para relaxar em total conforto, do café da manhã ao fim do dia.</p>
-                        <ul class="tag-list">
-                            <li>Madeira natural</li>
-                            <li>Luz suave</li>
-                            <li>Decoração rústica</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="split split--reverse">
-                    <div class="split-media split-media--wide reveal">
-                        <img src="img/num19.jpg" alt="Hidromassagem no deck com vista ao entardecer" loading="lazy" decoding="async">
-                    </div>
-                    <div class="reveal">
-                        <span class="feature-index">02</span>
-                        <h2>Relaxe e desfrute</h2>
-                        <p class="lead">Hidromassagem com vista panorâmica.</p>
-                        <p>Desfrute da fogueira ao ar livre à noite, sob o céu estrelado. Atividades perfeitas para um descanso completo.</p>
-                        <ul class="tag-list">
-                            <li>Hidromassagem</li>
-                            <li>Fogueira</li>
-                            <li>Vista panorâmica</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="split">
-                    <div class="split-media split-media--wide reveal">
-                        <img src="img/num17.jpg" alt="Área externa com mesa de madeira e montanhas ao fundo" loading="lazy" decoding="async">
-                    </div>
-                    <div class="reveal">
-                        <span class="feature-index">03</span>
-                        <h2>Aventuras ao ar livre</h2>
-                        <p class="lead">Explore trilhas em um cenário natural inesquecível.</p>
-                        <p>Conecte-se com a natureza enquanto desfruta de experiências emocionantes e revitalizantes.</p>
-                        <ul class="tag-list">
-                            <li>Trilhas</li>
-                            <li>Natureza</li>
-                            <li>Ar puro</li>
-                        </ul>
-                    </div>
-                </div>
+            <div class="experiencia">
+                <h3>Relaxe e Desfrute</h3>
+                <p>Relaxe na hidro com vista panorâmica.
+                    Desfrute da fogueira ao ar livre à noite.
+                    Atividades perfeitas para um descanso completo.</p>
             </div>
-        </section>
-
-        <section class="section section--flush-top">
-            <div class="container">
-                <div class="cta reveal">
-                    <div>
-                        <h2>Pronto para viver tudo isso?</h2>
-                        <p>Reserve suas datas e personalize sua estadia com serviços adicionais.</p>
-                    </div>
-                    <a href="reservation.html" class="btn btn--primary">
-                        Reservar agora
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-                    </a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="site-footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div>
-                    <a href="index.html" class="brand">
-                        <img src="img/logo.jpeg" alt="" width="44" height="44" loading="lazy">
-                        <span>Chalé Solaris</span>
-                    </a>
-                    <p>Um refúgio acolhedor no coração da natureza, feito para desacelerar e se reconectar.</p>
-                </div>
-                <div>
-                    <h4>Navegação</h4>
-                    <ul class="footer-links">
-                        <li><a href="index.html">Início</a></li>
-                        <li><a href="image.html">Galeria</a></li>
-                        <li><a href="experience.html">Experiências</a></li>
-                        <li><a href="about.html">Sobre nós</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4>Sua estadia</h4>
-                    <ul class="footer-links">
-                        <li><a href="reservation.html">Fazer reserva</a></li>
-                        <li><a href="contact.html">Fale conosco</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <span>© <span data-year>2026</span> Chalé Solaris. Todos os direitos reservados.</span>
-                <span>Feito com cuidado, cercado pela natureza.</span>
+            <div class="experiencia">
+                <h3>Aventuras ao Ar Livre</h3>
+                <p> Explore trilhas e atividades ao ar livre em um cenário natural inesquecível.  
+                    Conecte-se com a natureza enquanto desfruta de experiências emocionantes e revitalizantes.</p>
             </div>
         </div>
-    </footer>
+    </section>
 </body>
 </html>

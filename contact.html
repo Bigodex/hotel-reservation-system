@@ -1,137 +1,176 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="no-js">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contato — Chalé Solaris</title>
-    <meta name="description" content="Fale com o Chalé Solaris: tire dúvidas sobre reservas, estadia e experiências.">
-    <meta name="theme-color" content="#24443A">
-    <link rel="icon" href="img/logo.jpeg">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/main.js" defer></script>
+    <title>Contato - Chalé Solaris</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #F5F5DC;
+            margin: 0;
+            padding: 0;
+            background: url('img/num18.jpg') no-repeat center center;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .navbar {
+            width: 100%;
+            background-color: rgb(102, 74, 33);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 20px;
+            margin: 0;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+            gap: 20px;
+        }
+
+        .logo {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .navbar a {
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px;
+            color: #040404;
+            background-color: #F5F5DC;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
+            margin: 0;
+            text-decoration: none; 
+            padding: 25px 40px;
+            border-radius: 60px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .navbar a:hover {
+            color: #F5F5DC;
+            background-color: rgba(102, 74, 33);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+        }
+
+        .menu-left {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .container {
+            text-align: center;
+            background-color: rgba(102, 74, 33);
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 1);
+            border-radius: 10px;
+            position: fixed;
+            top: 150px;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-top: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 90);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 5px; /* Diminuído de 10px para 5px */
+            margin-top: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 90);
+        }
+
+        label {
+            text-align: left;
+            font-size: 1.1rem;
+            margin-bottom: 2px; /* Diminuído para ajustar o espaço */
+        }
+
+        input, textarea {
+            padding: 8px;
+            border: none; /* Diminuído de 10px para 8px */
+            border-radius: 30px;
+            font-size: 1rem;
+            background-color: #F5F5DC;
+        }
+
+        input[type="submit"] {
+            background-color: #F5F5DC;
+            color: #000000;
+            cursor: pointer;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            padding: 15px 15px;
+            border-radius: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 1);
+            font-size: 1.0rem;
+            margin-top: 30px;
+        }
+
+        input[type="submit"]:hover {
+            color: #F5F5DC; /* Cor do texto no hover */
+            background-color: #218838; /* Cor de fundo no hover */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            form {
+                gap: 10px;
+            }
+
+            label, input, textarea, input[type="submit"] {
+                font-size: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <a class="skip-link" href="#main">Pular para o conteúdo</a>
-
-    <header class="site-header">
-        <div class="container header-inner">
-            <a href="index.html" class="brand" aria-label="Chalé Solaris — início">
-                <img src="img/logo.jpeg" alt="" width="44" height="44">
-                <span>Chalé Solaris</span>
-            </a>
-            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menu">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-            </button>
-            <nav id="site-nav" class="nav" aria-label="Navegação principal">
-                <ul class="nav-list">
-                    <li><a href="index.html">Início</a></li>
-                    <li><a href="image.html">Galeria</a></li>
-                    <li><a href="experience.html">Experiências</a></li>
-                    <li><a href="about.html">Sobre nós</a></li>
-                    <li><a href="contact.html" aria-current="page">Contato</a></li>
-                </ul>
-                <a href="reservation.html" class="btn btn--primary">Reservar</a>
-            </nav>
+    <!-- Menu de navegação -->
+    <div class="navbar">
+        <div class="menu-left">
+            <img src="img/logo.jpeg" alt="Logo" class="logo">
+            <a href="index.html">Home</a>
+            <a href="image.html">Imagens</a>
+            <a href="experience.html">Experiências</a>
+            <a href="about.html">Sobre Nós</a>
+            <a href="contact.html">Contato</a>
         </div>
-    </header>
+    </div>
 
-    <main id="main">
-        <section class="page-hero">
-            <div class="hero-media"><img src="img/num18.jpg" alt="Sala do chalé iluminada pelo sol" fetchpriority="high"></div>
-            <div class="container">
-                <span class="eyebrow">Contato</span>
-                <h1>Vamos conversar</h1>
-                <p>Tem alguma dúvida ou pedido especial? Escreva para nós.</p>
-            </div>
-        </section>
+    <br>
 
-        <section class="section">
-            <div class="container contact-grid">
-                <div class="reveal">
-                    <span class="eyebrow">Fale conosco</span>
-                    <h2>Estamos aqui para ajudar</h2>
-                    <p class="lead">Seja para planejar sua estadia, tirar dúvidas ou fazer um pedido especial, nossa equipe terá prazer em atender você.</p>
-                    <ul class="info-list">
-                        <li>
-                            <span class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg></span>
-                            <div><strong>Reservas</strong><span>Prefere fazer tudo online? <a class="link-arrow" href="reservation.html">Reserve aqui</a></span></div>
-                        </li>
-                        <li>
-                            <span class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.9 5.8L20 10l-6.1 1.2L12 17l-1.9-5.8L4 10l6.1-1.2z"/></svg></span>
-                            <div><strong>Pedidos especiais</strong><span>Aniversários, pedidos de casamento e surpresas — conte para nós.</span></div>
-                        </li>
-                        <li>
-                            <span class="icon-badge icon-badge--warm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
-                            <div><strong>Localização</strong><span>Em uma área remota, cercada pela natureza.</span></div>
-                        </li>
-                    </ul>
-                </div>
+    <div class="container">
+        <h1>Contato</h1>
+        <form action="process_contact.php" method="POST">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
 
-                <form class="form-card reveal" action="process_contact.php" method="POST">
-                    <div class="form-grid">
-                        <div class="field">
-                            <label for="nome">Nome</label>
-                            <input class="input" type="text" id="nome" name="nome" autocomplete="name" placeholder="Seu nome" required>
-                        </div>
-                        <div class="field">
-                            <label for="email">E-mail</label>
-                            <input class="input" type="email" id="email" name="email" autocomplete="email" placeholder="voce@email.com" required>
-                        </div>
-                        <div class="field full">
-                            <label for="mensagem">Mensagem</label>
-                            <textarea class="input" id="mensagem" name="mensagem" rows="6" placeholder="Como podemos ajudar?" required></textarea>
-                        </div>
-                        <div class="full">
-                            <button type="submit" class="btn btn--primary btn--block">
-                                Enviar mensagem
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-                            </button>
-                            <p class="trust">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
-                                Seus dados são usados apenas para responder ao seu contato.
-                            </p>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </section>
-    </main>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
 
-    <footer class="site-footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div>
-                    <a href="index.html" class="brand">
-                        <img src="img/logo.jpeg" alt="" width="44" height="44" loading="lazy">
-                        <span>Chalé Solaris</span>
-                    </a>
-                    <p>Um refúgio acolhedor no coração da natureza, feito para desacelerar e se reconectar.</p>
-                </div>
-                <div>
-                    <h4>Navegação</h4>
-                    <ul class="footer-links">
-                        <li><a href="index.html">Início</a></li>
-                        <li><a href="image.html">Galeria</a></li>
-                        <li><a href="experience.html">Experiências</a></li>
-                        <li><a href="about.html">Sobre nós</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4>Sua estadia</h4>
-                    <ul class="footer-links">
-                        <li><a href="reservation.html">Fazer reserva</a></li>
-                        <li><a href="contact.html">Fale conosco</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <span>© <span data-year>2026</span> Chalé Solaris. Todos os direitos reservados.</span>
-                <span>Feito com cuidado, cercado pela natureza.</span>
-            </div>
-        </div>
-    </footer>
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
 </body>
 </html>

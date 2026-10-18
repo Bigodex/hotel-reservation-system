@@ -1,249 +1,294 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="no-js">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reserva — Chalé Solaris</title>
-    <meta name="description" content="Reserve sua estadia no Chalé Solaris: escolha as datas, a acomodação e os serviços adicionais.">
-    <meta name="theme-color" content="#24443A">
-    <link rel="icon" href="img/logo.jpeg">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/main.js" defer></script>
+    <title>Reserva - Chalé Solaris</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #F5F5DC; /* Texto em branco para contraste com o fundo */
+            margin: 0;
+            padding: 0;
+            background: url('img/num5.jpg') no-repeat center center;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .navbar {
+            width: 100%;
+            background-color: rgb(102, 74, 33); /* Cor de fundo do menu */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para destacar o menu */
+            display: flex;
+            justify-content: center; /* Distribui os itens entre o espaço */
+            align-items: center; /* Alinha os itens ao centro verticalmente */
+            padding: 20px 20px;
+            margin: 0; /* Remove a margem */
+            position: fixed; /* Fixa a barra no topo da página */
+            top: 0; /* Garante que fique no topo */
+            z-index: 1000; /* Garante que fique acima de outros elementos */
+            gap: 20px;
+        }
+
+        .logo {
+            width: 70px; /* Ajuste a largura conforme necessário */
+            height: 70px; /* Ajuste a altura conforme necessário */
+            border-radius: 50%; /* Torna a imagem redonda */
+            object-fit: cover; /* Garante que a imagem se ajuste ao contêiner */
+        }
+
+        .navbar a {
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px; /* Define o tamanho da fonte */
+            color: #040404; /* Cor do texto */
+            background-color: #F5F5DC;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6); /* Sombra */
+            margin: 0; /* Remove margens */
+            padding: 0; /* Remove espaçamento interno */
+            text-decoration: none; 
+            padding: 25px 40px;
+            border-radius: 60px;
+            justify-content: center; /* Distribui os itens entre o espaço */
+            align-items: center;
+        }
+
+        .navbar a:hover {
+            color: #F5F5DC; /* Cor do texto ao passar o mouse */
+            background-color: rgb(102, 74, 33); /* Fundo ao passar o mouse */
+            padding: 25px 40px;
+            border-radius: 60px;
+        }
+
+        .menu-left {
+            display: flex;
+            justify-content: center;
+            gap: 20px; /* Espaço entre os links */
+        }
+
+        h1 {
+            text-align: center;
+            color: #F5F5DC;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 90); /* Sombra no texto */
+            margin-top: 100px;
+        }
+
+        form {
+            max-width: 600px;
+            width: 100%;
+            background-color: rgba(102, 74, 33); /* Fundo semi-transparente */
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 1);
+            color: #F5F5DC;
+        }
+
+        fieldset {
+            border: none;
+            margin-bottom: 20px;
+        }
+
+        legend {
+            font-weight: bold;
+            color: #F5F5DC;
+            margin-bottom: 10px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #F5F5DC;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 30px;
+            font-size: 16px;
+            background-color: #F5F5DC;
+            color: #333;
+            align-items: flex-start;
+        }
+
+        textarea {
+            resize: horizontal;
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            background-color: #218838;
+            color: #F5F5DC;
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #1e7e34;
+        }
+
+        .radio-group, .checkbox-group {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .radio-group label, .checkbox-group label {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        @media (max-width: 600px) {
+            form {
+                padding: 15px;
+            }
+
+            input[type="text"],
+            input[type="email"],
+            input[type="tel"],
+            input[type="date"],
+            select,
+            textarea {
+                width: 100%;
+            }
+
+            .radio-group, .checkbox-group {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
 </head>
 <body>
-    <a class="skip-link" href="#main">Pular para o conteúdo</a>
-
-    <header class="site-header">
-        <div class="container header-inner">
-            <a href="index.html" class="brand" aria-label="Chalé Solaris — início">
-                <img src="img/logo.jpeg" alt="" width="44" height="44">
-                <span>Chalé Solaris</span>
-            </a>
-            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menu">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-            </button>
-            <nav id="site-nav" class="nav" aria-label="Navegação principal">
-                <ul class="nav-list">
-                    <li><a href="index.html">Início</a></li>
-                    <li><a href="image.html">Galeria</a></li>
-                    <li><a href="experience.html">Experiências</a></li>
-                    <li><a href="about.html">Sobre nós</a></li>
-                    <li><a href="contact.html">Contato</a></li>
-                </ul>
-                <a href="reservation.html" class="btn btn--primary">Reservar</a>
-            </nav>
+    <div class="navbar">
+        <div class="menu-left">
+            <img src="img/logo.jpeg" alt="Logo" class="logo">
+            <a href="index.html">Home</a>
+            <a href="image.html">Imagens</a>
+            <a href="experience.html">Experiências</a>
+            <a href="about.html">Sobre Nós</a>
+            <a href="contact.html">Contato</a>
         </div>
-    </header>
+    </div>
+    <h1>Formulário de Reserva</h1>
+    <form action="confirmation.html" method="GET">
+        <fieldset>
+            <legend>Informações Pessoais</legend>
+            <label for="nome">Nome completo:</label>
+            <input type="text" id="nome" name="nome" required>
 
-    <main id="main">
-        <section class="page-hero">
-            <div class="hero-media"><img src="img/num5.jpg" alt="Chalé em formato A sob céu azul" fetchpriority="high"></div>
-            <div class="container">
-                <span class="eyebrow">Reserva</span>
-                <h1>Reserve sua estadia</h1>
-                <p>Preencha os dados abaixo — leva menos de dois minutos.</p>
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="telefone">Telefone:</label>
+            <input type="tel" id="telefone" name="telefone" required>
+
+            <label for="documento">CPF:</label>
+            <input type="text" id="documento" name="documento">
+        </fieldset>
+        <hr>
+        <br>
+        <fieldset>
+            <legend>Detalhes da Reserva</legend>
+            <label for="checkin">Data de check-in:</label>
+            <input type="date" id="checkin" name="checkin" required>
+
+            <label for="checkout">Data de check-out:</label>
+            <input type="date" id="checkout" name="checkout" required>
+
+            <label for="hospedes">Número de hóspedes:</label>
+            <select id="hospedes" name="hospedes">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4+</option>
+            </select>
+        </fieldset>
+        <hr>
+        <br>
+        <fieldset>
+            <legend>Tipo de Quarto</legend>
+            <div class="radio-group">
+                <label for="standard">
+                    <input type="radio" id="standard" name="quarto" value="standard">
+                    Standard
+                </label>
+                
+                <label for="deluxe">
+                    <input type="radio" id="deluxe" name="quarto" value="deluxe">
+                    Deluxe
+                </label>
+
+                <label for="suite">
+                    <input type="radio" id="suite" name="quarto" value="suite">
+                    Suíte
+                </label>
             </div>
-        </section>
+        </fieldset>
+        <hr>
+        <br>
+        <fieldset>
+            <legend>Serviços Adicionais</legend>
+            <div class="checkbox-group">
+                <label for="cafe">
+                    <input type="checkbox" id="cafe" name="servicos" value="cafe">
+                    Café da manhã
+                </label>
+                
+                <label for="estacionamento">
+                    <input type="checkbox" id="estacionamento" name="servicos" value="estacionamento">
+                    Estacionamento
+                </label>
 
-        <section class="section">
-            <div class="container booking">
-                <form id="booking-form" class="form-card" action="confirmation.html" method="GET">
-                    <fieldset class="form-step">
-                        <legend class="form-step-title"><span class="step-num">1</span>Datas e hóspedes</legend>
-                        <div class="form-grid">
-                            <div class="field">
-                                <label for="checkin">Check-in</label>
-                                <input class="input" type="date" id="checkin" name="checkin" required>
-                            </div>
-                            <div class="field">
-                                <label for="checkout">Check-out</label>
-                                <input class="input" type="date" id="checkout" name="checkout" required aria-describedby="date-error">
-                                <p id="date-error" class="field-error" hidden>A data de check-out deve ser posterior ao check-in.</p>
-                            </div>
-                            <div class="field full">
-                                <label for="hospedes">Número de hóspedes</label>
-                                <select class="input" id="hospedes" name="hospedes">
-                                    <option value="1">1 hóspede</option>
-                                    <option value="2" selected>2 hóspedes</option>
-                                    <option value="3">3 hóspedes</option>
-                                    <option value="4">4 ou mais hóspedes</option>
-                                </select>
-                            </div>
-                        </div>
-                    </fieldset>
+                <label for="wifi">
+                    <input type="checkbox" id="wifi" name="servicos" value="wifi">
+                    Wi-Fi Premium
+                </label>
 
-                    <fieldset class="form-step">
-                        <legend class="form-step-title"><span class="step-num">2</span>Tipo de acomodação</legend>
-                        <div class="option-grid">
-                            <label class="option">
-                                <input type="radio" name="quarto" value="standard" data-label="Standard" checked>
-                                <span class="option-box">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4v16M2 8h18a2 2 0 0 1 2 2v10M2 17h20M6 8v9"/></svg>
-                                    <strong>Standard</strong>
-                                    <span>Conforto essencial com o charme do chalé</span>
-                                </span>
-                            </label>
-                            <label class="option">
-                                <input type="radio" name="quarto" value="deluxe" data-label="Deluxe">
-                                <span class="option-box">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>
-                                    <strong>Deluxe</strong>
-                                    <span>Mais espaço e vista privilegiada</span>
-                                </span>
-                            </label>
-                            <label class="option">
-                                <input type="radio" name="quarto" value="suite" data-label="Suíte">
-                                <span class="option-box">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.9 5.8L20 10l-6.1 1.2L12 17l-1.9-5.8L4 10l6.1-1.2z"/></svg>
-                                    <strong>Suíte</strong>
-                                    <span>A experiência completa do Solaris</span>
-                                </span>
-                            </label>
-                        </div>
-                    </fieldset>
-
-                    <fieldset class="form-step">
-                        <legend class="form-step-title"><span class="step-num">3</span>Serviços adicionais</legend>
-                        <div class="option-grid option-grid--4">
-                            <label class="option">
-                                <input type="checkbox" name="servicos" value="cafe">
-                                <span class="option-box">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><path d="M6 2v2M10 2v2M14 2v2"/></svg>
-                                    <strong>Café da manhã</strong>
-                                </span>
-                            </label>
-                            <label class="option">
-                                <input type="checkbox" name="servicos" value="estacionamento">
-                                <span class="option-box">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 17h2v-5l-2-5H5l-2 5v5h2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/><path d="M9 17h6"/></svg>
-                                    <strong>Estacionamento</strong>
-                                </span>
-                            </label>
-                            <label class="option">
-                                <input type="checkbox" name="servicos" value="wifi">
-                                <span class="option-box">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.55a11 11 0 0 1 14.08 0M1.42 9a16 16 0 0 1 21.16 0M8.53 16.11a6 6 0 0 1 6.95 0M12 20h.01"/></svg>
-                                    <strong>Wi-Fi Premium</strong>
-                                </span>
-                            </label>
-                            <label class="option">
-                                <input type="checkbox" name="servicos" value="spa">
-                                <span class="option-box">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12c2 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2 2-2 4-2M2 18c2 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2 2-2 4-2"/></svg>
-                                    <strong>Acesso ao spa</strong>
-                                </span>
-                            </label>
-                        </div>
-                    </fieldset>
-
-                    <fieldset class="form-step">
-                        <legend class="form-step-title"><span class="step-num">4</span>Seus dados</legend>
-                        <div class="form-grid">
-                            <div class="field full">
-                                <label for="nome">Nome completo</label>
-                                <input class="input" type="text" id="nome" name="nome" autocomplete="name" required>
-                            </div>
-                            <div class="field">
-                                <label for="email">E-mail</label>
-                                <input class="input" type="email" id="email" name="email" autocomplete="email" placeholder="voce@email.com" required>
-                            </div>
-                            <div class="field">
-                                <label for="telefone">Telefone</label>
-                                <input class="input" type="tel" id="telefone" name="telefone" autocomplete="tel" placeholder="(00) 00000-0000" required>
-                            </div>
-                            <div class="field full">
-                                <label for="documento">CPF <span class="optional">(opcional)</span></label>
-                                <input class="input" type="text" id="documento" name="documento" inputmode="numeric" placeholder="000.000.000-00">
-                            </div>
-                        </div>
-                    </fieldset>
-
-                    <fieldset class="form-step">
-                        <legend class="form-step-title"><span class="step-num">5</span>Pagamento e observações</legend>
-                        <div class="form-grid">
-                            <div class="field full">
-                                <label for="pagamento">Método de pagamento</label>
-                                <select class="input" id="pagamento" name="pagamento">
-                                    <option value="pix">Pix</option>
-                                    <option value="debito">Cartão de débito</option>
-                                    <option value="credito">Cartão de crédito</option>
-                                    <option value="transferencia">Transferência bancária</option>
-                                </select>
-                            </div>
-                            <div class="field full">
-                                <label for="comentarios">Pedidos especiais <span class="optional">(opcional)</span></label>
-                                <textarea class="input" id="comentarios" name="comentarios" rows="4" placeholder="Conte se há algo que possamos preparar para você"></textarea>
-                            </div>
-                        </div>
-                    </fieldset>
-
-                    <div class="form-submit hide-desktop">
-                        <button type="submit" class="btn btn--primary btn--block">Confirmar reserva</button>
-                    </div>
-                </form>
-
-                <aside class="booking-aside" aria-label="Resumo da reserva">
-                    <div class="summary">
-                        <img src="img/num15.jpg" alt="Quarto do chalé com vista para a mata" loading="lazy" decoding="async">
-                        <div class="summary-body">
-                            <h3>Resumo da reserva</h3>
-                            <ul class="summary-list">
-                                <li><span>Check-in</span><span id="sum-checkin">—</span></li>
-                                <li><span>Check-out</span><span id="sum-checkout">—</span></li>
-                                <li><span>Duração</span><span id="sum-nights">—</span></li>
-                                <li><span>Hóspedes</span><span id="sum-guests">—</span></li>
-                                <li><span>Acomodação</span><span id="sum-room">—</span></li>
-                            </ul>
-                            <button type="submit" form="booking-form" class="btn btn--primary btn--block hide-mobile">
-                                Confirmar reserva
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-                            </button>
-                            <p class="trust">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
-                                Seus dados ficam protegidos e são usados apenas para a sua reserva.
-                            </p>
-                        </div>
-                    </div>
-                </aside>
+                <label for="spa">
+                    <input type="checkbox" id="spa" name="servicos" value="spa">
+                    Acesso ao spa
+                </label>
             </div>
-        </section>
-    </main>
+        </fieldset>
+        <hr>
+        <br>
+        <fieldset>
+            <legend>Requisitos Especiais</legend>
+            <label for="comentarios">Comentários ou pedidos especiais:</label>
+            <textarea id="comentarios" name="comentarios" rows="4" cols="50"></textarea>
+        </fieldset>
+        <hr>
+        <br>
+        <fieldset>
+            <legend>Método de Pagamento</legend>
+            <label for="pagamento">Selecione o método de pagamento:</label>
+            <select id="pagamento" name="pagamento">
+                <option value="pix">Pix</option>
+                <option value="debito">Cartão de Débito</option>
+                <option value="credito">Cartão de Crédito</option>
+                <option value="transferencia">Transferência Bancária</option>
+            </select>
+        </fieldset>
 
-    <footer class="site-footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div>
-                    <a href="index.html" class="brand">
-                        <img src="img/logo.jpeg" alt="" width="44" height="44" loading="lazy">
-                        <span>Chalé Solaris</span>
-                    </a>
-                    <p>Um refúgio acolhedor no coração da natureza, feito para desacelerar e se reconectar.</p>
-                </div>
-                <div>
-                    <h4>Navegação</h4>
-                    <ul class="footer-links">
-                        <li><a href="index.html">Início</a></li>
-                        <li><a href="image.html">Galeria</a></li>
-                        <li><a href="experience.html">Experiências</a></li>
-                        <li><a href="about.html">Sobre nós</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4>Sua estadia</h4>
-                    <ul class="footer-links">
-                        <li><a href="reservation.html">Fazer reserva</a></li>
-                        <li><a href="contact.html">Fale conosco</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <span>© <span data-year>2026</span> Chalé Solaris. Todos os direitos reservados.</span>
-                <span>Feito com cuidado, cercado pela natureza.</span>
-            </div>
-        </div>
-    </footer>
+        <button type="submit">Confirmar Reserva</button>
+    </form>
 </body>
 </html>
