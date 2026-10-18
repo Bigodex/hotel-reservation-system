@@ -1,159 +1,220 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR" class="no-js">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Chalé Solaris</title>
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            line-height: 1.6;
-            color: #F5F5DC; /* Texto em branco para contraste com o fundo */
-            margin: 0;
-            padding: 0;
-            background: url('img/num1.jpg') no-repeat center center;
-            background-size: cover;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
-        }
-
-        .navbar {
-            width: 100%;
-            background-color: rgb(102, 74, 33);; /* Cor de fundo do menu */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para destacar o menu */
-            display: flex;
-            justify-content: center; /* Distribui os itens entre o espaço */
-            align-items: center; /* Alinha os itens ao centro verticalmente */
-            padding: 20px 20px;
-            margin: 0; /* Remove a margem */
-            position: fixed; /* Fixa a barra no topo da página */
-            top: 0; /* Garante que fique no topo */
-            z-index: 1000; /* Garante que fique acima de outros elementos */
-            gap: 20px;
-        }
-
-        .logo {
-            width: 70px; /* Ajuste a largura conforme necessário */
-            height: 70px; /* Ajuste a altura conforme necessário */
-            border-radius: 50%; /* Torna a imagem redonda */
-            object-fit: cover; /* Garante que a imagem se ajuste ao contêiner */
-        }
-
-        .navbar a {
-            font-family: 'Roboto', sans-serif;
-            font-size: 14px; /* Define o tamanho da fonte */
-            color: #040404; /* Cor do texto */
-            background-color: #F5F5DC;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6); /* Remove qualquer fundo */
-            margin: 0; /* Remove margens */
-            padding: 0; /* Remove espaçamento interno */
-            text-decoration: none; 
-            padding: 25px 40px;
-            border-radius: 60px;
-            justify-content: center; /* Distribui os itens entre o espaço */
-            align-items: center;
-        }
-
-
-        .navbar a:hover {
-            color: #F5F5DC; /* Cor do texto ao passar o mouse */
-            background-color: rgb(102, 74, 33); /* Fundo preto ao passar o mouse */
-            padding: 25px 40px;
-            border-radius: 60px; /* Sublinhado ao passar o mouse */
-        }
-
-        
-        .menu-left {
-            display: flex;
-            justify-content: center;
-            gap: 20px; /* Espaço entre os links */
-        }
-
-        .container {
-            text-align: center;
-            background-color: rgba(102, 74, 33); /* Fundo semi-transparente para melhorar a legibilidade */
-            padding: 30px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 1);
-            border-radius: 10px;
-            position: fixed; /* Fixa a barra no topo da página */
-            top: 200px;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            margin-top: 0;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 90); /* Sombra no texto para maior contraste */
-        }
-
-        p {
-            font-size: 1.2rem;
-            margin-bottom: 40px;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 90);
-        }
-
-        a {
-            font-size: 1.1rem;
-            text-decoration: none;
-            color: #000000;
-            background-color: rgba(245, 245, 220);
-            padding: 15px 20px;
-            border-radius: 30px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 1);
-            transition: background-color 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        a:hover {
-            color: #F5F5DC;
-            background-color: #218838;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
-        }
-
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2rem;
-            }
-
-            p {
-                font-size: 1rem;
-            }
-
-            a {
-                font-size: 1rem;
-                padding: 10px 20px;
-            }
-
-            .cards {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-    </style>
+    <title>Chalé Solaris — Refúgio na natureza</title>
+    <meta name="description" content="Chalé Solaris: um refúgio acolhedor no coração da natureza, com vista panorâmica, hidromassagem, fogueira e trilhas.">
+    <meta name="theme-color" content="#24443A">
+    <link rel="icon" href="img/logo.jpeg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js" defer></script>
 </head>
 <body>
-    <!-- Menu de navegação -->
-    <div class="navbar">
-        <div class="menu-left">
-            <img src="img/logo.jpeg" alt="Logo" class="logo">
-            <a href="index.html">Home</a>
-            <a href="image.html">Imagens</a>
-            <a href="experience.html">Experiências</a>
-            <a href="about.html">Sobre Nós</a>
-            <a href="contact.html">Contato</a>
+    <a class="skip-link" href="#main">Pular para o conteúdo</a>
+
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="index.html" class="brand" aria-label="Chalé Solaris — início">
+                <img src="img/logo.jpeg" alt="" width="44" height="44">
+                <span>Chalé Solaris</span>
+            </a>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menu">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+            </button>
+            <nav id="site-nav" class="nav" aria-label="Navegação principal">
+                <ul class="nav-list">
+                    <li><a href="index.html" aria-current="page">Início</a></li>
+                    <li><a href="image.html">Galeria</a></li>
+                    <li><a href="experience.html">Experiências</a></li>
+                    <li><a href="about.html">Sobre nós</a></li>
+                    <li><a href="contact.html">Contato</a></li>
+                </ul>
+                <a href="reservation.html" class="btn btn--primary">Reservar</a>
+            </nav>
         </div>
-    </div>
+    </header>
 
-    <br>
+    <main id="main">
+        <!-- Hero -->
+        <section class="hero">
+            <div class="hero-media">
+                <img src="img/num1.jpg" alt="Quarto do chalé em madeira com janela triangular voltada para as montanhas" fetchpriority="high">
+            </div>
+            <div class="container hero-content">
+                <span class="eyebrow">Refúgio na natureza</span>
+                <h1>Desacelere no Chalé Solaris</h1>
+                <p>Um refúgio acolhedor no coração da natureza, cercado por árvores e tranquilidade. Charme rústico, vistas incríveis e tudo o que você precisa para relaxar e se reconectar.</p>
+                <div class="hero-actions">
+                    <a href="reservation.html" class="btn btn--primary">
+                        Faça sua reserva
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                    </a>
+                    <a href="image.html" class="btn btn--ghost">Ver galeria</a>
+                </div>
+            </div>
+        </section>
 
-    <div class="container">
-        <h1>Bem-vindo ao Chalé Solaris</h1>
-        <p>O Chalé Solaris é um refúgio acolhedor no coração da natureza,<br> 
-            cercado por árvores e tranquilidade. Com seu charme rústico e vistas<br> 
-            incríveis, é o local ideal para relaxar e se reconectar com o mundo natural.</p>
-        <a href="reservation.html">Faça sua Reserva</a>
-    </div>
+        <!-- Destaques -->
+        <section class="highlights" aria-label="Destaques do chalé">
+            <div class="container">
+                <div class="highlights-grid reveal">
+                    <div class="highlight">
+                        <span class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg></span>
+                        <div><strong>Vista panorâmica</strong><span>Montanhas a perder de vista</span></div>
+                    </div>
+                    <div class="highlight">
+                        <span class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12c2 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2 2-2 4-2M2 18c2 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2 2-2 4-2"/></svg></span>
+                        <div><strong>Hidromassagem</strong><span>Ao ar livre, com vista</span></div>
+                    </div>
+                    <div class="highlight">
+                        <span class="icon-badge icon-badge--warm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.07-2.14-.22-4.05 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.15.43-2.29 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg></span>
+                        <div><strong>Fogueira</strong><span>Noites sob as estrelas</span></div>
+                    </div>
+                    <div class="highlight">
+                        <span class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></span>
+                        <div><strong>Trilhas</strong><span>Natureza ao seu redor</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Apresentação -->
+        <section class="section">
+            <div class="container split">
+                <div class="split-media reveal">
+                    <img src="img/num3.jpg" alt="Fachada do chalé em formato A sob céu azul" loading="lazy" decoding="async">
+                    <img class="float-img" src="img/num2.jpg" alt="Poltronas junto à janela com vista para a mata" loading="lazy" decoding="async">
+                </div>
+                <div class="reveal">
+                    <span class="eyebrow">O chalé</span>
+                    <h2>Conforto rústico, natureza por todos os lados</h2>
+                    <p class="lead">Madeira, luz natural e janelas que enquadram as montanhas. O Chalé Solaris foi pensado para quem busca uma pausa verdadeira do ritmo acelerado do dia a dia.</p>
+                    <ul class="check-list">
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>Ambiente aconchegante com decoração rústica e sofisticada</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>Área externa com hidromassagem, deck e fogueira</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>Compromisso com a sustentabilidade e o meio ambiente</li>
+                    </ul>
+                    <a href="about.html" class="link-arrow">
+                        Conheça nossa história
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experiências -->
+        <section class="section section--sand">
+            <div class="container">
+                <div class="section-head section-head--center reveal">
+                    <span class="eyebrow">Experiências</span>
+                    <h2>Momentos para guardar na memória</h2>
+                    <p>Do amanhecer na janela às noites ao redor da fogueira, cada detalhe foi pensado para o seu descanso.</p>
+                </div>
+                <div class="card-grid">
+                    <article class="card reveal">
+                        <div class="card-media"><img src="img/num13.jpg" alt="Sala de estar em madeira com poltronas e mesa rústica" loading="lazy" decoding="async"></div>
+                        <div class="card-body">
+                            <h3>Aconchego</h3>
+                            <p>Madeira, luz natural suave e decoração rústica com um toque de sofisticação.</p>
+                        </div>
+                    </article>
+                    <article class="card reveal">
+                        <div class="card-media"><img src="img/num19.jpg" alt="Hidromassagem no deck ao entardecer" loading="lazy" decoding="async"></div>
+                        <div class="card-body">
+                            <h3>Relaxe e desfrute</h3>
+                            <p>Hidromassagem com vista panorâmica e fogueira ao ar livre para as noites.</p>
+                        </div>
+                    </article>
+                    <article class="card reveal">
+                        <div class="card-media"><img src="img/num17.jpg" alt="Área externa com mesa de madeira e vista para as montanhas" loading="lazy" decoding="async"></div>
+                        <div class="card-body">
+                            <h3>Aventuras ao ar livre</h3>
+                            <p>Trilhas e atividades em um cenário natural inesquecível.</p>
+                        </div>
+                    </article>
+                </div>
+                <div class="section-actions section-actions--center">
+                    <a href="experience.html" class="btn btn--outline">Ver todas as experiências</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Galeria -->
+        <section class="section">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="eyebrow">Galeria</span>
+                    <h2>Um olhar pelo chalé</h2>
+                </div>
+                <div class="gallery-preview reveal">
+                    <a href="image.html"><img src="img/num20.jpg" alt="Fogueira com cadeiras e luzes ao entardecer" loading="lazy" decoding="async"></a>
+                    <a href="image.html"><img src="img/num15.jpg" alt="Quarto com cama de casal e vista para a mata" loading="lazy" decoding="async"></a>
+                    <a href="image.html"><img src="img/num9.jpg" alt="Espreguiçadeiras no gramado" loading="lazy" decoding="async"></a>
+                    <a href="image.html"><img src="img/num4.jpg" alt="Lenha empilhada ao lado da churrasqueira" loading="lazy" decoding="async"></a>
+                    <a href="image.html"><img src="img/num18.jpg" alt="Sala iluminada pelo sol com vista para o deck" loading="lazy" decoding="async"></a>
+                </div>
+                <div class="section-actions">
+                    <a href="image.html" class="link-arrow">
+                        Ver galeria completa
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="section section--flush-top">
+            <div class="container">
+                <div class="cta reveal">
+                    <div>
+                        <h2>Sua pausa na natureza começa aqui</h2>
+                        <p>Escolha as datas, personalize sua estadia e garanta seu momento no Chalé Solaris.</p>
+                    </div>
+                    <a href="reservation.html" class="btn btn--primary">
+                        Reservar agora
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <a href="index.html" class="brand">
+                        <img src="img/logo.jpeg" alt="" width="44" height="44" loading="lazy">
+                        <span>Chalé Solaris</span>
+                    </a>
+                    <p>Um refúgio acolhedor no coração da natureza, feito para desacelerar e se reconectar.</p>
+                </div>
+                <div>
+                    <h4>Navegação</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="image.html">Galeria</a></li>
+                        <li><a href="experience.html">Experiências</a></li>
+                        <li><a href="about.html">Sobre nós</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Sua estadia</h4>
+                    <ul class="footer-links">
+                        <li><a href="reservation.html">Fazer reserva</a></li>
+                        <li><a href="contact.html">Fale conosco</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© <span data-year>2026</span> Chalé Solaris. Todos os direitos reservados.</span>
+                <span>Feito com cuidado, cercado pela natureza.</span>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

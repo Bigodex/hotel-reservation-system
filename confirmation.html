@@ -1,141 +1,90 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR" class="no-js">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Confirmação de Reserva</title>
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            line-height: 1.6;
-            color: #F5F5DC; /* Texto em branco para contraste com o fundo */
-            margin: 0;
-            padding: 0;
-            background: url('img/num9.jpg') no-repeat center center;
-            background-size: cover;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
-        }
-
-        .navbar {
-            width: 100%;
-            background-color: rgb(102, 74, 33);; /* Cor de fundo do menu */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para destacar o menu */
-            display: flex;
-            justify-content: center; /* Distribui os itens entre o espaço */
-            align-items: center; /* Alinha os itens ao centro verticalmente */
-            padding: 20px 20px;
-            margin: 0; /* Remove a margem */
-            position: fixed; /* Fixa a barra no topo da página */
-            top: 0; /* Garante que fique no topo */
-            z-index: 1000; /* Garante que fique acima de outros elementos */
-            gap: 20px;
-        }
-
-        .logo {
-            width: 70px; /* Ajuste a largura conforme necessário */
-            height: 70px; /* Ajuste a altura conforme necessário */
-            border-radius: 50%; /* Torna a imagem redonda */
-            object-fit: cover; /* Garante que a imagem se ajuste ao contêiner */
-        }
-
-        .navbar a {
-            font-family: 'Roboto', sans-serif;
-            font-size: 14px; /* Define o tamanho da fonte */
-            color: #040404; /* Cor do texto */
-            background-color: #F5F5DC;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6); /* Remove qualquer fundo */
-            margin: 0; /* Remove margens */
-            padding: 0; /* Remove espaçamento interno */
-            text-decoration: none; 
-            padding: 25px 40px;
-            border-radius: 60px;
-            justify-content: center; /* Distribui os itens entre o espaço */
-            align-items: center;
-        }
-
-
-        .navbar a:hover {
-            color: #F5F5DC; /* Cor do texto ao passar o mouse */
-            background-color: rgb(102, 74, 33); /* Fundo preto ao passar o mouse */
-            padding: 25px 40px;
-            border-radius: 60px; /* Sublinhado ao passar o mouse */
-        }
-
-        
-        .menu-left {
-            display: flex;
-            justify-content: center;
-            gap: 20px; /* Espaço entre os links */
-        }
-        
-        .confirmation-container {
-            background-color: rgba(102, 74, 33); 
-            padding: 50px;
-            border-radius: 10px;
-            box-shadow: 4px 6px 15px rgba(0, 0, 0, 90);
-            text-align: center;
-            max-width: 500px;
-            width: 100%;
-        }
-
-        h1 {
-            color: #28a745;
-            font-size: 2em;
-            margin-top: 0px;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 90);
-        }
-
-        p {
-            font-size: 1.2em;
-            color: #F5F5DC; /* Cor do texto ao passar o mouse */
-            margin-bottom: 40px;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 90);
-        }
-
-        .button-container {
-            color: #F5F5DC;
-            text-align: center;
-        }
-
-        .button-container a {
-            font-size: 1.1rem;
-            text-decoration: none;
-            color: #000000;
-            background-color: rgba(245, 245, 220);
-            padding: 15px 20px;
-            border-radius: 30px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 1);
-            transition: background-color 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .button-container a:hover {
-            color: rgba(245, 245, 220);
-            background-color: #218838;
-        }
-    </style>
+    <title>Reserva confirmada — Chalé Solaris</title>
+    <meta name="description" content="Sua reserva no Chalé Solaris foi confirmada.">
+    <meta name="theme-color" content="#24443A">
+    <link rel="icon" href="img/logo.jpeg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js" defer></script>
 </head>
 <body>
-    <div class="navbar">
-        <div class="menu-left">
-            <img src="img/logo.jpeg" alt="Logo" class="logo">
-            <a href="index.html">Home</a>
-            <a href="image.html">Imagens</a>
-            <a href="experience.html">Experiências</a>
-            <a href="about.html">Sobre Nós</a>
-            <a href="contact.html">Contato</a>
+    <a class="skip-link" href="#main">Pular para o conteúdo</a>
+
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="index.html" class="brand" aria-label="Chalé Solaris — início">
+                <img src="img/logo.jpeg" alt="" width="44" height="44">
+                <span>Chalé Solaris</span>
+            </a>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menu">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+            </button>
+            <nav id="site-nav" class="nav" aria-label="Navegação principal">
+                <ul class="nav-list">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="image.html">Galeria</a></li>
+                    <li><a href="experience.html">Experiências</a></li>
+                    <li><a href="about.html">Sobre nós</a></li>
+                    <li><a href="contact.html">Contato</a></li>
+                </ul>
+                <a href="reservation.html" class="btn btn--primary">Reservar</a>
+            </nav>
         </div>
-    </div>
-    <div class="confirmation-container">
-        <h1>Reserva Confirmada!</h1>
-        <p>Obrigado por fazer a reserva.<br> Estamos ansiosos para a sua estadia.</p>
-        <div class="button-container">
-            <a href="index.html">Voltar para a Página Inicial</a>
+    </header>
+
+    <main id="main" class="confirm-wrap">
+        <div class="confirm-card">
+            <div class="confirm-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+            </div>
+            <h1>Reserva confirmada<span id="confirm-name"></span>!</h1>
+            <p>Obrigado por escolher o Chalé Solaris. Estamos ansiosos para receber você.</p>
+            <ul id="confirm-details" class="summary-list"></ul>
+            <div class="confirm-actions">
+                <a href="index.html" class="btn btn--dark">Voltar ao início</a>
+                <a href="experience.html" class="btn btn--outline">Ver experiências</a>
+            </div>
         </div>
-    </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <a href="index.html" class="brand">
+                        <img src="img/logo.jpeg" alt="" width="44" height="44" loading="lazy">
+                        <span>Chalé Solaris</span>
+                    </a>
+                    <p>Um refúgio acolhedor no coração da natureza, feito para desacelerar e se reconectar.</p>
+                </div>
+                <div>
+                    <h4>Navegação</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="image.html">Galeria</a></li>
+                        <li><a href="experience.html">Experiências</a></li>
+                        <li><a href="about.html">Sobre nós</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Sua estadia</h4>
+                    <ul class="footer-links">
+                        <li><a href="reservation.html">Fazer reserva</a></li>
+                        <li><a href="contact.html">Fale conosco</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© <span data-year>2026</span> Chalé Solaris. Todos os direitos reservados.</span>
+                <span>Feito com cuidado, cercado pela natureza.</span>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
